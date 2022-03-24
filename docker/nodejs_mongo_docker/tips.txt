@@ -1,0 +1,9 @@
+to run a node js appplication with mongo/mysql 
+
+we need to make seperate container for node and mongodb container
+it is confined in its own space 
+nodejs conatiner responisble for running nodejs app
+and mongodb for mongo
+
+Dockerfile will help us to containerrize our node app
+Docker-compose will start all conntainers required for this app

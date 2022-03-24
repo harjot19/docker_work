@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nodejs user form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href= "../public/stylesheets/style2.css">
+    </head>
+    <body class = "body">
+        <div class= "container-fluid">
+        <div class="row" >
+            <div class="col-md-12 column-main">   <!--column-->
+                
+
+
+                    <h3 class ="mb-3 bg-dark title"> <b>{{viewTitle}}</b></h3>
+                    {% if success_messages %}
+                    <div class="alert alert-success">{{success_messsages}}</div>
+                    {% endif%} 
+                    {% if error_messages %}
+                    <div class="alert alert-danger">{{error_messsages}}</div>
+                    {% endif%} 
+                    
+
+                    {% if error!='' %}
+                    <div class="alert alert-danger" role="alert">
+                        {{error}}
+                      </div>
+                    {% endif%}  
+                    <!-- form -->
+                    <form action = "/add" method="POST"> 
+                        <input type="hidden" name="_id" value="{{employees._id.valueOf()}}">
+                        <div class="row row1 m-5">     <!--row1-->
+                            <div class = "col1 col-md-6 mb-3">  <!---col1-->
+                            
+                                <!-- name -->
+                                <div>
+                                    <label>
+                                         Name<span class = "asterick">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" class="form-control name" name="fullName" value="{{employees.fullName}}"> 
+                                <div class = "text-danger" >{{employees.fullNameError}}</div>   <!----for validation error--->
+                            
+                                <div class="row row1 m-5">     <!--row1-->    
+                                    <div class = "col1 col-md-3 mb-3">  <!---col1-->
+                                        <!-- Phone code-->
+                                        <div>
+                                            
+                                            <label class="lphone">
+                                                Country Code<span class = "asterick">*</span>
+                                            </label>
+                                        </div>
+                                        <input type="text" class="form-control phone-code" name="phoneCode" value="{{employees.phoneCode}}"> 
+                                        <div class = "text-danger" >{{employees.phoneCodeError}}</div>    <!----for validation error--->
+
+                                    </div> 
+                                    
+                                    <div class = "col1 col-md-9 mb-3">  <!---col1-->
+                                        <!-- Phone -->
+                                        <div>
+                                            
+                                            <label class="lphone">
+                                                Phone<span class = "asterick">*</span>
+                                            </label>
+                                        </div>
+                                        <input type="text" class="form-control phone" name="phone" value="{{employees.phone}}"> 
+                                        <div class = "text-danger" >{{employees.phoneError}}</div>    <!----for validation error--->
+
+                                        <div>
+                                            
+                                            <label class="lphone">
+                                               Password<span class = "asterick">*</span>
+                                            </label>
+                                        </div>
+                                        <input type="text" class="form-control pass1" name="pass1" value="{{employees.pass1}}"> 
+                                        <div class = "text-danger" >{{employees.pass1Error}}</div>    <!----for validation error--->
+
+                                        <div>
+                                            
+                                            <label class="lphone">
+                                             Confirm  Password<span class = "asterick">*</span>
+                                            </label>
+                                        </div>
+                                        <input type="text" class="form-control pass2" name="pass2" value="{{employees.pass2}}"> 
+                                        <div class = "text-danger" >{{employees.pass2Error}}</div>    <!----for validation error--->
+
+
+                                        
+                                    </div>    
+
+                                </div>
+                            
+                            
+                            </div>  <!--col1-->
+                        
+                        
+                            <!-- column right side -->
+                        
+                            <div class = "col1 col-md-6 mb-3">  <!---col1-->
+                            
+                                <!-- email -->
+                                <div>
+                                    <label>
+                                         Email<span class = "asterick">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" class="form-control email" name="email" value="{{employees.email}}"> 
+                                <div class = "text-danger" >{{employees.emailError}}</div>   <!----for validation error--->
+                            
+                                <!-- date of birth -->
+                                <div>
+                                    <label class="ldob">
+                                         Date of Birth<span class = "asterick">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" class="form-control dob" name="dob" value="{{employees.dob}}"> 
+                                <div class = "text-danger" >{{employees.dobError}}</div>    <!----for validation error--->
+                            
+                            
+                            </div>  <!--col1-->
+                        
+                        
+                        </div>    <!--row1--->    
+                    
+                    
+                        <!-- row2 -->
+                        <div class="row">
+                            <div class = "col-md-12 col3">    <!---col3-->
+                                <div>
+                                    <label>
+                                         Address<span class = "asterick">*</span>
+                                    </label>
+                                </div>    
+                                    <input type="text" class="address1 form-control mb-3" id="location" name="address1" placeholder="Address Line 1" value="{{employees.address1}}">  
+                                    <div class = "text-danger" >{{employees.address1Error}}</div>  <!----for validation error--->
+
+                                    <input type="text" class="address2 form-control mb-3"  name="address2" placeholder="Address Line 2" value="{{employees.address2}}">
+                                    <div class = "text-danger" >{{employees.address2Error}}</div>   <!----for validation error--->
+                            </div>    <!----col3-->
+                        </div>    <!--row2-->    
+                    
+                        <div class="row city-row mb-3" >      <!-- row3 -->
+                             <div class = "col-md-4 col4">    <!---col4-->
+                                    <input type="text" class="city form-control"  name="city" placeholder="City" value="{{employees.city}}"> 
+                                    <div class = "text-danger" >{{employees.cityError}}</div>  <!----for validation error--->
+                            </div>   <!---col4-->   
+                                
+                            <div class = "col-md-4 col4">    <!---col5-->
+                                    <input type="text" class="state form-control"  name="state" placeholder="State"  value="{{employees.state}}"> 
+                                    <div class = "text-danger" >{{employees.stateError}}</div>  <!----for validation error--->
+                             </div>   <!---col5--> 
+                         
+                             <div class = "col-md-4 col4">    <!---col6-->
+                                    <input type="text" class="zip-code form-control"  name="zipCode" placeholder="ZipCode" value="{{employees.zipCode}}"> 
+                                    <div class = "text-danger" >{{employees.zipCodeError}}</div>   <!----for validation error--->
+                            </div>   <!---col6--> 
+                        
+                        </div>     <!-- row3 -->
+                    
+                        
+                            <button type="submit" class="btn submit-button">Submit</button>
+                    
+                    </form>
+
+            </div>    <!--column -->
+           
+        </div>  <!--row -->
+
+      </div>  
+
+      
+      <script src="../public/javascripts/main.js"></script>
+
+    </body>
+
+    
+
+</html>

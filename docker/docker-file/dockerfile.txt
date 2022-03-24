@@ -1,0 +1,36 @@
+to make docker file 
+create file with name Dockerfile
+
+it is txt file 
+
+to build file commands are
+docker build <filepath>
+
+#if local add -t . in filepath 
+or give absolute path
+#-t tag for tagginh your images
+
+e.g.
+
+docker build -t myimage:1.0 .  
+#myimage is image name and 1.0 is tag
+
+check image in docker 
+docker images
+
+you wil find your image with tag and image id 
+
+you can run your images either eith image name and tag together
+docker run imagename:tag
+or with image id 
+docker run imageid
+
+
+sudo docker run -it --rm --name=helloworld -v $(pwd)/dummyapp -w /dummyapp node node helloworld.js 
+
+docker run -it --rm --name=helloworld -v $(pwd):/dummyapp -w /dummyapp node node helloworld.js 
+
+docker run -it --rm --name=helloworld -v $(pwd):/dummyapp -w /dummyapp node node dummyapp/helloworld.js 
+
+
+

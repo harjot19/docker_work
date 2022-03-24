@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nodejs user form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body class = "body">
+
+        {% if success_messages %}
+        <div class="alert alert-success">{{success_messsages}}</div>
+        {% endif%} 
+        {% if error_messages %}
+        <div class="alert alert-danger">{{error_messsages}}</div>
+        {% endif%} 
+        
+        <div class= "container-fluid bg-dark">
+        <div class="row" >
+            <div class="col-md-12 column-main">   <!--column-->
+
+
+
+                <div class="card" style="width: 18rem;">
+                    <h3>Sign in</h3>
+                    <div class="card-body">
+                        <form action = "/login" method="POST">
+                        
+                             <!-- UserEmail -->
+                             <div>
+                                <label>
+                                     Email
+                                </label>
+                            </div>
+                            <input type="text" class="form-control email" name="email"> 
+                            <div class = "text-danger" >{{employees.emailrror}}</div>   <!----for validation error--->
+
+                             <!-- UserEmail -->
+                             <div>
+                                <label>
+                                     Password
+                                </label>
+                            </div>
+                            <input type="text" class="form-control pass1" name="pass1"> 
+                            <div class = "text-danger" >{{employees.pass1rror}}</div>   <!----for validation error--->
+                            <div>
+                                <a class ="forgot" href="">Forgot Password?</a> 
+                            </div>
+                            <a class="btn btn-primary" href="#" role="button">Back</a>
+                            <button class="btn btn-success" type="submit">Login</button>
+                        </form>
+                    </div>
+                  </div>
+            </div>    <!--column -->
+           
+        </div>  <!--row-->
+
+      </div>  
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

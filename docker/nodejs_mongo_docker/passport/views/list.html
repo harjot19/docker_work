@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nodejs user form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body class = "body">
+        <div class= "container-fluid">
+        <div class="row" >
+            <div class="col-md-12 column-main">   <!--column-->
+                {% if success_messages %}
+                <div class="alert alert-success">{{success_messsages}}</div>
+                {% endif%} 
+                {% if error_messages %}
+                <div class="alert alert-danger">{{error_messsages}}</div>
+                {% endif%} 
+                
+                <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="bg-info">
+                        <tr>
+                            <th>Name</th> 
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Country Code</th>
+                            <th>Phone</th>
+                            <th>DOB</th>
+                            <th>Address Line 1</th>
+                            <th>Address Line 2</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip Code</th>
+                            <th>__id</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+
+                        {% for lists in list %}
+                        <tr>
+                        <td>{{lists.fullName}}</td>
+                        <td>{{lists.email}}</td>
+                        <td>{{lists.pass1}}</td>
+                        <td>{{lists.phoneCode}}</td>
+                        <td>{{lists.phone}}</td>
+                        <td>{{lists.dob}}</td>
+                        <td>{{lists.address1}}</td>
+                        <td>{{lists.address2}}</td>
+                        <td>{{lists.city}}</td>
+                        <td>{{lists.state}}</td>
+                        <td>{{lists.zipCode}}</td>
+                        <td>{{lists._id.valueOf()}}</td>
+
+                        <td><a href="/edit/{{lists._id.valueOf()}}">Edit</a></td>   <!--edit link -->
+                        <td><a href="/delete/{{lists._id.valueOf()}}" onclick="return confirm('Are you sure to delete this data ?');">Delete</a></td>    <!---delete link-->
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+                
+
+
+            </div>
+            </div>    <!--column -->
+           
+        </div>  <!--row-->
+
+      </div>  
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

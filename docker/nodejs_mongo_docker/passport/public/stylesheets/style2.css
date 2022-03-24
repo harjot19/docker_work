@@ -1,0 +1,60 @@
+input{
+    border-color:#fd7e14;
+}
+
+label{
+    font-size: 16px;
+}
+
+.title{
+    color: #fd7e14;
+}
+
+.asterick{
+    color: crimson;
+}
+.row1{
+    margin-bottom: 20px;
+
+}
+
+.fullName{
+    margin-top: 0px;
+}
+
+
+
+.state{
+    margin-top: 20px;
+}
+
+.zip-code{
+    
+        margin-top: 20px;
+    
+}
+.address2{
+    margin-top: 20px;
+}
+.city{
+    margin-top: 20px;
+}
+
+
+.submit-button{
+    margin-top:20px;
+    background-color: #fd7e14;
+    color:white;
+}
+
+.error{
+        color:red;
+}
+.ldob{
+    margin-top: 20px;
+}
+
+.lphone{
+    margin-top: 20px;
+}
+

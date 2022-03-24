@@ -1,0 +1,222 @@
+docker run --help
+
+to remove error of permission denied
+sudo chmod 666 /var/run/docker.sock
+
+netstat -tulnp | grep 27017
+kill -9 862
+
+
+n Docker, everything is based on Images. An image is a combination of a file system and parameters. Let’s take an example of the following command in Docker.
+
+docker run hello-world 
+The Docker command is specific and tells the Docker program on the Operating System that something needs to be done.
+
+The run command is used to mention that we want to create an instance of an image, which is then called a container.
+
+Finally, "hello-world" represents the image from which the container is made.
+
+=>Displaying Docker Images
+To see the list of Docker images on the system, you can issue the following command.
+
+docker 
+
+
+=>Removing Docker Images
+The Docker images on the system can be removed via the docker rmi command. Let’s look at this command in more detail.
+
+docker rmi
+This command is used to remove Docker images.
+
+Syntax
+docker rmi ImageID
+
+
+=>docker images -q
+This command is used to return only the Image ID’s of the images.
+
+Syntax
+docker images 
+Options
+q − It tells the Docker command to return the Image ID’s only.
+
+Return Value
+The output will show only the Image ID’s of the images on the Docker host.
+
+Example
+sudo docker images -q 
+
+
+=>Listing of Containers
+One can list all of the containers on the machine via the docker ps command. This command is used to return the currently running containers.
+
+docker ps
+Syntax
+docker ps 
+Options
+None
+
+Return Value
+The output will show the currently running containers.
+
+=>docker ps -a
+This command is used to list all of the containers on the system
+
+Syntax
+docker ps -a 
+Options
+─a − It tells the docker ps command to list all of the containers on the system.
+
+Return Value
+The output will show all containers.
+
+
+=>docker history
+With this command, you can see all the commands that were run with an image via a container.
+
+Syntax
+docker history ImageID 
+Options
+ImageID − This is the Image ID for which you want to see all the commands that were run against it.
+
+Return Value
+The output will show all the commands run against that image.
+
+Example
+sudo docker history centos
+
+
+
+=>docker stop
+This command is used to stop a running container.
+
+Syntax
+docker stop ContainerID 
+Options
+ContainerID − This is the Container ID which needs to be stopped.
+
+Return Value
+The output will give the ID of the stopped container.
+
+Example
+sudo docker stop 9f215ed0b0d3 
+The above command will stop the Docker container 9f215ed0b0d3.
+
+=>docker rm
+This command is used to delete a container.
+
+Syntax
+docker rm ContainerID 
+Options
+ContainerID − This is the Container ID which needs to be removed.
+
+Return Value
+The output will give the ID of the removed container.
+
+Example
+sudo docker rm 9f215ed0b0d3 
+
+
+=>docker stats
+This command is used to provide the statistics of a running container.
+
+Syntax
+docker stats ContainerID 
+Options
+ContainerID − This is the Container ID for which the stats need to be provided.
+
+Return Value
+The output will show the CPU and Memory utilization of the Container.
+
+Example
+sudo docker stats 9f215ed0b0d3 
+
+
+
+=>docker attach
+This command is used to attach to a running container.
+
+Syntax
+docker attach ContainerID 
+Options
+ContainerID − This is the Container ID to which you need to attach.
+
+Return Value
+None
+
+Example
+sudo docker attach 07b0b6f434fe 
+
+
+
+=>docker pause
+This command is used to pause the processes in a running container.
+
+Syntax
+docker pause ContainerID 
+Options
+ContainerID − This is the Container ID to which you need to pause the processes in the container.
+
+Return Value
+The ContainerID of the paused container.
+
+Example
+sudo docker pause 07b0b6f434fe   
+
+
+=>ocker unpause
+This command is used to unpause the processes in a running container.
+
+Syntax
+
+
+
+docker unpause ContainerID
+Options
+ContainerID − This is the Container ID to which you need to unpause the processes in the container.
+
+Return Value
+The ContainerID of the running container.
+
+Example
+sudo docker unpause 07b0b6f434fe
+
+
+
+=>docker kill
+This command is used to kill the processes in a running container.
+
+Syntax
+docker kill ContainerID
+Options
+ContainerID − This is the Container ID to which you need to kill the processes in the container.
+
+Return Value
+The ContainerID of the running container.
+
+Example
+sudo docker kill 07b0b6f434fe 
+
+
+=>service docker stop
+This command is used to stop the Docker daemon process.
+
+Syntax
+service docker stop 
+Options
+None
+
+Return Value
+A message showing that the Docker process has stopped.
+
+Example
+sudo service docker stop 
+
+
+
+to stop runnig container at once 
+ docker container stop $(docker container ls -aq)
+ 
+ ########all about running and stopping containers.
+
+
